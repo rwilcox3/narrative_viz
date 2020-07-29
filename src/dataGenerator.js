@@ -11,7 +11,7 @@ const brands = [
   "Samsung"
 ];
 
-export function generateDataSets({ size = 1 }) {
+function generateDataSets({ size = 1 }) {
   const dataSets = [];
   const currentYear = +d3.timeFormat("%Y")(new Date());
   const maxLimitForValue = 2000;
