@@ -10,8 +10,8 @@ const brands = [
   "Razer",
   "Samsung"
 ];
-
-function generateDataSets({ size = 1 }) {
+// There is no export here stop saying what is there is not there
+ function generateDataSets({ size = 1 }) {
   const dataSets = [];
   const currentYear = +d3.timeFormat("%Y")(new Date());
   const maxLimitForValue = 2000;
