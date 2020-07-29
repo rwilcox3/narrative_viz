@@ -1,6 +1,6 @@
-import * as d3 from "d3";
+//import * as d3 from "d3";
 
-export function BarChartRace(chartId, extendedSettings) {
+function BarChartRace(chartId, extendedSettings) {
   const chartSettings = {
     width: 500,
     height: 400,
