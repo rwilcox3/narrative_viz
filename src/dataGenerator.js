@@ -1,4 +1,4 @@
-import { timeFormat } from "d3";
+//import { timeFormat } from "d3";
 
 const brands = [
   "Apple",
@@ -13,7 +13,7 @@ const brands = [
 
 export function generateDataSets({ size = 1 }) {
   const dataSets = [];
-  const currentYear = +timeFormat("%Y")(new Date());
+  const currentYear = +d3.timeFormat("%Y")(new Date());
   const maxLimitForValue = 2000;
   const minLimitForValue = 200;
 
