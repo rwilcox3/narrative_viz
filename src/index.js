@@ -5,6 +5,7 @@
 //import { select as d3Select } from "d3";
 
 const myChart = new BarChartRace("bar-chart-race");
+readData();
 
 myChart
   .setTitle("Bar Chart Race Title")

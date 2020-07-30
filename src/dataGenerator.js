@@ -46,3 +46,10 @@ function generateDataSets({ size = 1 }) {
   console.log("Created Datasets");
   return dataSets;
 }
+
+function readData() {
+	
+d3.csv("data/daily.csv").then(function(data) {
+  console.log(data[0]);
+}
+
