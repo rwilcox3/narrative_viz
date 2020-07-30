@@ -3,7 +3,7 @@
   <head>
     <title>Bar Chart Race</title>
     <meta charset="UTF-8" />
-	<link rel="stylesheet" type="text/css" href="src/styles.css" />
+	 <link rel="stylesheet" type="text/css" href="src/styles.css" />
   </head>
 
   <body>
@@ -17,17 +17,8 @@
         <text class="current-date"></text>
       </g>
     </svg>
-	<script src="https://d3js.org/d3.v5.js"></script>
     <script src="src/dataGenerator.js"></script>
     <script src="src/BarChartRace.js"></script>
-    <script>
-	const myChart = new BarChartRace("bar-chart-race");
-
-	myChart
-	  .setTitle("Bar Chart Race Title")
-	  .addDatasets(generateDataSets({ size: 5 }))
-	  .render();
-
-	</script>
+    <script src="src/index.js"></script>
   </body>
 </html>
