@@ -28,6 +28,7 @@ const brands = [
       }))
     });
   }
-
+   console.log("Data sets created");
+   console.log(dataSets);
   return dataSets;
 }
