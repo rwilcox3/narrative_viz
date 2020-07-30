@@ -48,7 +48,7 @@ function generateDataSets({ size = 1 }) {
     });
   }
   console.log("Created Datasets");
-  console.log(dataSets[0];
+  console.log(dataSets[0]);
   return dataSets;
 }
 
