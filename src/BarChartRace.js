@@ -45,7 +45,7 @@ function BarChartRace(chartId, extendedSettings) {
     .select(".current-date")
     .attr(
       "transform",
-      `translate(${chartSettings.innerWidth} ${chartSettings.innerHeight})`
+      `translate(0 ${chartSettings.innerHeight})`
     );
 
   function draw({ dataSet, date: currentDate }, transition) {
