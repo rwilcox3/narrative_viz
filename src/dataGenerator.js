@@ -54,8 +54,8 @@ function generateDataSets({ size = 1 }) {
 
  async function readData(cb) {
 	
-	const data = await d3.csv("data/daily.csv");
-//	d3.csv("data/daily.csv").then(function(data) {
+	//const data = await d3.csv("data/daily.csv");
+	d3.csv("data/daily.csv").then(function(data) {
 	  // console.log(data[0]);
 
 	  const dataSets = [];
@@ -66,34 +66,34 @@ function generateDataSets({ size = 1 }) {
 	
 	  currdate = 0;
 	  cases = [];
-	  for (let i = 0; i < data.length; i++) {
+		for (let i = 0; i < data.length; i++) {
 
-		if (currdate == 0) {
-			currdate = data[i].date;
-		}
-		//console.log("Currdate=" + currdate + " date=" + data[i].date)
-		if (currdate != data[i].date ) {
-			
-			dataSets.push({
-			  date: parseInt(currdate),
-			  dataSet: cases
+			if (currdate == 0) {
+				currdate = data[i].date;
+			}
+			//console.log("Currdate=" + currdate + " date=" + data[i].date)
+			if (currdate != data[i].date ) {
+				
+				dataSets.push({
+				  date: parseInt(currdate),
+				  dataSet: cases
+				});
+				cases = [];
+				currdate = data[i].date;
+				//console.log(dataSets);
+			}
+
+			cases.push({
+				name:data[i].state,
+				value: parseInt(data[i].positive)
 			});
-			cases = [];
-			currdate = data[i].date;
-			//console.log(dataSets);
+			
 		}
-
-		cases.push({
-			name:data[i].state,
-			value: parseInt(data[i].positive)
-		});
-		
-		
-	 //}
-  console.log("Created Datasets");
-  console.log(dataSets);
-  cb(dataSets);
-  return dataSets;
+		console.log("Created Datasets");
+		console.log(dataSets);
+		cb(dataSets);
+	 }
+//  return dataSets;
 
 	})
 }
