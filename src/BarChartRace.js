@@ -13,7 +13,7 @@ function BarChartRace(chartId, extendedSettings) {
   };
 
   chartSettings.innerWidth = chartSettings.width - chartSettings.padding * 2;
-  chartSettings.innerHeight = chartSettings.height - chartSettings.padding * 2;
+  chartSettings.innerHeight = chartSettings.height - chartSettings.padding ;
 
   const chartDataSets = [];
   let chartTransition;
