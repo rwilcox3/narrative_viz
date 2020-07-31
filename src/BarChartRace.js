@@ -3,7 +3,7 @@
 function BarChartRace(chartId, extendedSettings) {
   const chartSettings = {
     width: 1000,
-    height: 1000,
+    height: 750,
     padding: 40,
     titlePadding: 5,
     columnPadding: .4,
