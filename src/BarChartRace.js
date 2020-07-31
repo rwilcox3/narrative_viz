@@ -3,10 +3,10 @@
 function BarChartRace(chartId, extendedSettings) {
   const chartSettings = {
     width: 1200,
-    height: 750,
+    height: 1500,
     padding: 60,
     titlePadding: 5,
-    columnPadding: 2,
+    columnPadding: .4,
     ticksInXAxis: 10,
     duration: 1000,
     ...extendedSettings
