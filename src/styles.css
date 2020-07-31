@@ -51,16 +51,16 @@ svg {
 
 .columns .column-container .column-title {
   text-anchor: end;
-  fill: black;
+  fill: #13294B;
   dominant-baseline: middle;
   font-size: 14px;
 }
 
 .columns .column-container .column-value {
+  fill:  #13294B;
   dominant-baseline: middle;
   font-size: 14px;
   color: #13294B;
-  fill:  #13294B;
 }
 
 .columns .column-container .column-value text {

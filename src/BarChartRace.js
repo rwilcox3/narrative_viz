@@ -8,7 +8,7 @@ function BarChartRace(chartId, extendedSettings) {
     titlePadding: 5,
     columnPadding: .4,
     ticksInXAxis: 10,
-    duration: 2000,
+    duration: 1000,
     ...extendedSettings
   };
 
