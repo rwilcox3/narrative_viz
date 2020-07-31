@@ -55,7 +55,7 @@ function generateDataSets({ size = 1 }) {
 function readData() {
 	
 	d3.csv("data/daily.csv").then(function(data) {
-	  console.log(data[0]);
+	  // console.log(data[0]);
 
 	  const dataSets = [];
 	  const currentYear = +d3.timeFormat("%Y")(new Date());
@@ -90,7 +90,7 @@ function readData() {
 		
 	  }
   console.log("Created Datasets");
-  console.log(dataSets[20]);
+  //console.log(dataSets[20]);
   return dataSets;
 
 	})
