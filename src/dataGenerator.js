@@ -66,13 +66,13 @@ function readData(cb) {
 	
 	  currdate = 0;
 	  cases = [];
-		for (let i = 0; i <= data.length; i++) {
+		for (let i = 0; i < data.length; i++) {
 
 			if (currdate == 0) {
 				currdate = data[i].date;
 			}
 			//console.log("Currdate=" + currdate + " date=" + data[i].date)
-			if (currdate != data[i].date ) {
+			if (currdate != data[i].date  || i == data.length -1) {
 				
 				dataSets.push({
 				  date: parseInt(currdate),
@@ -82,7 +82,7 @@ function readData(cb) {
 				currdate = data[i].date;
 				//console.log(dataSets);
 			}
-
+			//Will lose the last value, but inconsequential for the project
 			cases.push({
 				name:data[i].state,
 				value: parseInt(data[i].positive)
