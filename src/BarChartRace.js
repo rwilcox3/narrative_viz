@@ -11,6 +11,12 @@ function BarChartRace(chartId, extendedSettings) {
     duration: 1000,
     ...extendedSettings
   };
+  
+  // Define the div for the tooltip
+  var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
 
   chartSettings.innerWidth = chartSettings.width - chartSettings.padding * 2;
   chartSettings.innerHeight = chartSettings.height - chartSettings.padding ;
@@ -91,7 +97,21 @@ function BarChartRace(chartId, extendedSettings) {
       .append("rect")
       .attr("class", "column-rect")
       .attr("width", 0)
-      .attr("height", yAxisScale.step() * (1 - chartSettings.columnPadding));
+      .attr("height", yAxisScale.step() * (1 - chartSettings.columnPadding))
+	  .on("mouseover", function(d) {		
+		div.transition()		
+			.duration(200)		
+			.style("opacity", .9);		
+		div	.html(formatTime(d.date) + "<br/>"  + d.value)	
+			.style("left", (d3.event.pageX) + "px")		
+			.style("top", (d3.event.pageY - 28) + "px");	
+		})					
+	  .on("mouseout", function(d) {		
+	div.transition()		
+		.duration(500)		
+		.style("opacity", 0);	
+	});
+	;
 
     barGroupsEnter
       .append("text")
