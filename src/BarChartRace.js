@@ -29,7 +29,7 @@ function BarChartRace(chartId, extendedSettings) {
 
   const yAxisScale = d3
     .scaleBand()
-    .range([0, chartSettings.innerHeight] / 2)
+    .range([0, chartSettings.innerHeight])
     .padding(chartSettings.columnPadding);
 
   d3.select(`#${chartId}`)
