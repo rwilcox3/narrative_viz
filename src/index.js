@@ -5,7 +5,8 @@
 //import { select as d3Select } from "d3";
 
 const myChart = new BarChartRace("bar-chart-race");
-console.log(readData()[20]);
+var junk = readData();
+console.log(junk);
 
 myChart
   .setTitle("U.S Covid Cases by State")
