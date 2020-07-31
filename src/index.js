@@ -5,7 +5,8 @@
 //import { select as d3Select } from "d3";
 
 const myChart = new BarChartRace("bar-chart-race");
-var junk = readData();
+var junk;
+await junk = readData();
 console.log(junk);
 junk = generateDataSets({ size: 5 })
 console.log(junk);
