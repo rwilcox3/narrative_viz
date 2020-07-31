@@ -4,7 +4,7 @@ function BarChartRace(chartId, extendedSettings) {
   const chartSettings = {
     width: 1200,
     height: 750,
-    padding: 80,
+    padding: 60,
     titlePadding: 5,
     columnPadding: .4,
     ticksInXAxis: 10,
