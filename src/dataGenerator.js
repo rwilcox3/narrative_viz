@@ -54,8 +54,8 @@ function generateDataSets({ size = 1 }) {
 
   async function readData() {
 	
-//	const data = await d3.csv("data/daily.csv");
-	d3.csv("data/daily.csv").then(function(data) {
+	const data = await d3.csv("data/daily.csv");
+//	d3.csv("data/daily.csv").then(function(data) {
 	  // console.log(data[0]);
 
 	  const dataSets = [];
@@ -89,7 +89,7 @@ function generateDataSets({ size = 1 }) {
 		});
 		
 		
-	  }
+	 // }
   console.log("Created Datasets");
   console.log(dataSets);
   return dataSets;
