@@ -62,20 +62,31 @@ function readData() {
 	  const maxLimitForValue = 2000;
 	  const minLimitForValue = 200;
 	  const maximumModelCount = 10;
+	
+	  currdate = 0;
+	  cases = [];
+	  for (let i = 0; i < data.length; i++) {
 
-	  for (let i = 0; i < size; i++) {
-		dataSets.push({
-		  date: data.date,
-		  dataSet: states
-			.sort(function() {
-			  return Math.random() - 0.5;
-			})
-			.slice(0, maximumModelCount)
-			.map(states => ({
-			  name: data.state,
-			  value: data.positive
-			}))
+		if (currdate == 0) {
+			currdate = data[i].date
+		}
+
+		if (currdate != data[i].date ) {
+			
+			dataSets.push({
+			  date: currdate,
+			  dataSet: cases
+			});
+			cases = [];
+			currdate = data[i].date;
+		}
+
+		cases.push({
+			name:data[i].state,
+			value: data[i].positive
 		});
+		
+		
 	  }
   console.log("Created Datasets");
   return dataSets;

@@ -8,9 +8,11 @@ const myChart = new BarChartRace("bar-chart-race");
 readData();
 
 myChart
-  .setTitle("Bar Chart Race Title")
-  .addDatasets(generateDataSets({ size: 5 }))
-  .render();
+  .setTitle("U.S Covid Cases by State")
+//  .addDatasets(generateDataSets({ size: 5 }))
+  .addDatasets(readData())
+ 
+ .render();
 
 d3.select("button").on("click", function() {
   if (this.innerHTML === "Stop") {
