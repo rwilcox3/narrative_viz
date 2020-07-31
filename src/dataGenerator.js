@@ -72,7 +72,7 @@ function readData(cb) {
 				currdate = data[i].date;
 			}
 			//console.log("Currdate=" + currdate + " date=" + data[i].date)
-			if (currdate != data[i].date  || i == data.length -1) {
+			if (currdate != data[i].date  || (i == data.length -1) {
 				
 				dataSets.push({
 				  date: parseInt(currdate),
@@ -85,7 +85,10 @@ function readData(cb) {
 			//Will lose the last value, but inconsequential for the project
 			cases.push({
 				name:data[i].state,
-				value: parseInt(data[i].positive)
+				value: parseInt(data[i].positive),
+				deaths: data[i].deaths,
+				hospital: data[i].hospitalizedCumulative,
+				testTotal: parseInt(data[i].positive) + parseInt(data[i].negative)
 			});
 			
 		}

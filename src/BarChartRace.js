@@ -102,7 +102,8 @@ function BarChartRace(chartId, extendedSettings) {
 		div.transition()		
 			.duration(200)		
 			.style("opacity", .9);		
-		div	.html(d.date + "<br/>"  + d.value)	
+
+		div	.html("Total Tests: " + d.testTotal + "<br/>"  + "Hospitalized:" + d.hospital + "Deaths:" + d.deaths)	
 			.style("left", (d3.event.pageX) + "px")		
 			.style("top", (d3.event.pageY - 28) + "px");	
 		})					
