@@ -66,7 +66,7 @@ function readData(cb) {
 	
 	  currdate = 0;
 	  cases = [];
-		for (let i = 0; i < data.length; i++) {
+		for (let i = 0; i <= data.length; i++) {
 
 			if (currdate == 0) {
 				currdate = data[i].date;
