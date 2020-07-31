@@ -54,7 +54,7 @@ function generateDataSets({ size = 1 }) {
 
 function readData() {
 	
-	d3.csv("data/covid.csv").then(function(data) {
+	d3.csv("data/daily.csv").then(function(data) {
 	  console.log(data[0]);
 
 	  const dataSets = [];
