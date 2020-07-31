@@ -6,7 +6,7 @@ function BarChartRace(chartId, extendedSettings) {
     height: 750,
     padding: 60,
     titlePadding: 5,
-    columnPadding: .4,
+    columnPadding: 2,
     ticksInXAxis: 10,
     duration: 1000,
     ...extendedSettings
