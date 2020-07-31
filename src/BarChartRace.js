@@ -216,6 +216,7 @@ function BarChartRace(chartId, extendedSettings) {
   } */
 
   async function render(index = 0) {
+	console.log("Render");
     currentDataSetIndex = index;
     timerStart = d3.now();
 
