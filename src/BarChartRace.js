@@ -38,14 +38,14 @@ function BarChartRace(chartId, extendedSettings) {
 
   chartContainer.attr(
     "transform",
-    `translate(${chartSettings.padding} ${chartSettings.padding})`
+    `translate(0 ${chartSettings.padding})`
   );
 
   chartContainer
     .select(".current-date")
     .attr(
       "transform",
-      `translate(0 ${chartSettings.innerHeight})`
+      `translate(${chartSettings.innerWidth} ${chartSettings.innerHeight})`
     );
 
   function draw({ dataSet, date: currentDate }, transition) {
