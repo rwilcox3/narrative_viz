@@ -38,7 +38,7 @@ function BarChartRace(chartId, extendedSettings) {
 
   chartContainer.attr(
     "transform",
-    `translate(${chartSettings.padding} ${chartSettings.titlePadding})`
+    `translate(${chartSettings.padding} ${chartSettings.padding})`
   );
 
   chartContainer
