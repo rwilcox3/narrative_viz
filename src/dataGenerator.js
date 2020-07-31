@@ -79,6 +79,7 @@ function readData() {
 			});
 			cases = [];
 			currdate = data[i].date;
+			console.log(dataSets);
 		}
 
 		cases.push({
