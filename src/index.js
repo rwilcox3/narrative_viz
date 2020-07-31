@@ -5,14 +5,13 @@
 //import { select as d3Select } from "d3";
 
 const myChart = new BarChartRace("bar-chart-race");
-readData();
+console.log(readData()[20]);
 
 myChart
   .setTitle("U.S Covid Cases by State")
-//  .addDatasets(generateDataSets({ size: 5 }))
   .addDatasets(readData())
- 
- .render();
+  .render();
+//  .addDatasets(generateDataSets({ size: 5 }))
 
 d3.select("button").on("click", function() {
   if (this.innerHTML === "Stop") {
