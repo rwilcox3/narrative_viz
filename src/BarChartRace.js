@@ -2,11 +2,11 @@
 
 function BarChartRace(chartId, extendedSettings) {
   const chartSettings = {
-    width: 2000,
-    height: 4000,
+    width: 1000,
+    height: 2000,
     padding: 40,
     titlePadding: 5,
-    columnPadding: 10,
+    columnPadding: .4,
     ticksInXAxis: 10,
     duration: 2000,
     ...extendedSettings
