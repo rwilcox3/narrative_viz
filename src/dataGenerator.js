@@ -70,7 +70,7 @@ function readData() {
 		if (currdate == 0) {
 			currdate = data[i].date;
 		}
-		console.log("Currdate=" + currdate + " date=" + data[i].date)
+		//console.log("Currdate=" + currdate + " date=" + data[i].date)
 		if (currdate != data[i].date ) {
 			
 			dataSets.push({
@@ -79,7 +79,7 @@ function readData() {
 			});
 			cases = [];
 			currdate = data[i].date;
-			console.log(dataSets);
+			//console.log(dataSets);
 		}
 
 		cases.push({

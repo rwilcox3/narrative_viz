@@ -180,6 +180,7 @@ function BarChartRace(chartId, extendedSettings) {
   }
 
   function addDataset(dataSet) {
+	console.log("addDataSet " + dataSet[10];
     chartDataSets.push(dataSet);
 
     return this;
