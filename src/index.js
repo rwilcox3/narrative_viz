@@ -6,7 +6,7 @@
 
 const myChart = new BarChartRace("bar-chart-race");
 var junk;
-await junk = readData();
+junk = readData();
 console.log(junk);
 junk = generateDataSets({ size: 5 })
 console.log(junk);
