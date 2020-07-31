@@ -74,7 +74,7 @@ function readData() {
 		if (currdate != data[i].date ) {
 			
 			dataSets.push({
-			  date: currdate,
+			  date: parseInt(currdate),
 			  dataSet: cases
 			});
 			cases = [];
@@ -84,7 +84,7 @@ function readData() {
 
 		cases.push({
 			name:data[i].state,
-			value: data[i].positive
+			value: parseInt(data[i].positive)
 		});
 		
 		
