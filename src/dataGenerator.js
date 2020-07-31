@@ -59,10 +59,6 @@ function readData(cb) {
 	  // console.log(data[0]);
 
 	  const dataSets = [];
-	  const currentYear = +d3.timeFormat("%Y")(new Date());
-	  const maxLimitForValue = 2000;
-	  const minLimitForValue = 200;
-	  const maximumModelCount = 10;
 	
 	  currdate = 0;
 	  cases = [];
