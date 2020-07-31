@@ -91,8 +91,7 @@ function readData(cb) {
 		}
 		console.log("Created Datasets");
 		console.log(dataSets);
-		//cb(dataSets);
-	 }
+		cb(dataSets);
 //  return dataSets;
 
 	})
