@@ -90,6 +90,7 @@ function readData() {
 		
 	  }
   console.log("Created Datasets");
+  console.log(dataSets[20]);
   return dataSets;
 
 	})
