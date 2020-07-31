@@ -51,7 +51,7 @@ svg {
 
 .columns .column-container .column-title {
   text-anchor: end;
-  fill: white;
+  fill: black;
   dominant-baseline: middle;
   font-size: 14px;
 }
