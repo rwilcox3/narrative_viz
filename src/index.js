@@ -10,8 +10,8 @@ const myChart = new BarChartRace("bar-chart-race");
 
 myChart
   .setTitle("U.S Covid Cases by State")
-//  .addDatasets(generateDataSets({ size: 5 }))
-  .addDatasets(readData())
+  .addDatasets(generateDataSets({ size: 5 }))
+//  .addDatasets(readData())
   .render();
 
 d3.select("button").on("click", function() {
