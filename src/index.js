@@ -34,6 +34,8 @@ d3.select("button").on("click", function() {
 
 function start_chart(data) {
 	
+	console.log("Starting Chart");
+	console.log(data[20]);
   myChart.addDatasets(data)
   .render();
 }	
