@@ -8,9 +8,9 @@ const myChart = new BarChartRace("bar-chart-race");
 var junk;
 //junk =  readData();
 test();
-console.log(junk);
-junk = generateDataSets({ size: 5 })
-console.log(junk);
+//console.log(junk);
+//junk = generateDataSets({ size: 5 })
+//console.log(junk);
 
 myChart
   .setTitle("U.S Covid Cases by State")
@@ -34,6 +34,7 @@ d3.select("button").on("click", function() {
 
 async function test() {
 	const data = await d3.csv("data/daily.csv");
+	console.log("Test");
 	console.log(data);
 
 }
