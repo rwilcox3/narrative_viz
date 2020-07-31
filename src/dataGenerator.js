@@ -68,7 +68,7 @@ function readData(cb) {
 				currdate = data[i].date;
 			}
 			//console.log("Currdate=" + currdate + " date=" + data[i].date)
-			if (currdate != data[i].date  || (i == data.length -1) {
+			if (currdate != data[i].date)  || (i == data.length -1) {
 				
 				dataSets.push({
 				  date: parseInt(currdate),
