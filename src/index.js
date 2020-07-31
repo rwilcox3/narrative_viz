@@ -13,8 +13,8 @@ console.log(junk);
 myChart
   .setTitle("U.S Covid Cases by State")
 //  .addDatasets(generateDataSets({ size: 5 }))
-  .addDatasets(readData())
-  .render();
+//  .addDatasets(readData())
+//  .render();
 
 d3.select("button").on("click", function() {
   if (this.innerHTML === "Stop") {
