@@ -6,7 +6,8 @@
 
 const myChart = new BarChartRace("bar-chart-race");
 var junk;
-//junk =  readData();
+readData(start_chart);
+console.log(junk);
 test();
 //console.log(junk);
 //junk = generateDataSets({ size: 5 })
@@ -31,10 +32,9 @@ d3.select("button").on("click", function() {
   }
 });
 
+function start_chart(data) {
+	
+  myChart.addDatasets(data)
+  .render();
+}	
 
-async function test() {
-	const data = await d3.csv("data/daily.csv");
-	console.log("Test");
-	console.log(data);
-
-}
