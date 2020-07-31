@@ -97,3 +97,10 @@ function generateDataSets({ size = 1 }) {
 	})
 }
 
+async function test() {
+	const data = await d3.csv("data/daily.csv");
+	console.log("Test");
+	console.log(data);
+
+}
+
