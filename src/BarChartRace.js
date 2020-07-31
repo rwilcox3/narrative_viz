@@ -181,7 +181,7 @@ function BarChartRace(chartId, extendedSettings) {
 
   function addDataset(dataSet) {
 	console.log("addDataset");
-	console.log( dataSet[10]);
+	console.log( dataSet[20]);
     chartDataSets.push(dataSet);
 
     return this;
