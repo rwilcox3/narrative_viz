@@ -68,7 +68,8 @@ d3.csv("data/data2.csv").then(function(data) {
       .data([data])
       .attr("class", "line")
       .attr("d", valueline)
-	  .on("mouseover", function(d) {		
+	  .on("mouseover", function(d,i) {
+		console.log(d);
 		div.transition()		
 			.duration(200)		
 			.style("opacity", .9);		
