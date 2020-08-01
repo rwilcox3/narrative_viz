@@ -11,6 +11,7 @@ button {
   box-shadow: none;
   outline: none;
   cursor: pointer;
+  display:inline-block;
 }
 
 svg {
