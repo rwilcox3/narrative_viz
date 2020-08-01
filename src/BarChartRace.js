@@ -103,9 +103,9 @@ function BarChartRace(chartId, extendedSettings) {
 			.duration(200)		
 			.style("opacity", .9);		
 
-		div	.html("Total Tests: " + d.testTotal + "<br/>"  + "Hospitalized:" + d.hospital + "Deaths:" + d.deaths)	
+		div	.html("Total Tests: " + d.testTotal +  "<br>Hospitalized:" + d.hospital + "<br>Deaths:" + d.deaths)	
 			.style("left", (d3.event.pageX) + "px")		
-			.style("top", (d3.event.pageY - 28) + "px");	
+			.style("top", (d3.event.pageY - 84) + "px");	
 		})					
 	  .on("mouseout", function(d) {		
 	div.transition()		
