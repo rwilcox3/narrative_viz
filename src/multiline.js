@@ -1,129 +1,61 @@
-// Fake data
-var data = [
-  {
-    year: 2000,
-    popularity: 50
-  },
-  {
-    year: 2001,
-    popularity: 150
-  },
-  {
-    year: 2002,
-    popularity: 200
-  },
-  {
-    year: 2003,
-    popularity: 130
-  },
-  {
-    year: 2004,
-    popularity: 240
-  },
-  {
-    year: 2005,
-    popularity: 380
-  },
-  {
-    year: 2006,
-    popularity: 420
-  }
-];
+<script>
 
-// Create SVG and padding for the chart
-const svg = d3
-  .select("#chart")
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 30, left: 60},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
   .append("svg")
-  .attr("height", 300)
-  .attr("width", 600);
-const margin = { top: 0, bottom: 20, left: 30, right: 20 };
-const chart = svg.append("g").attr("transform", `translate(${margin.left},0)`);
-const width = +svg.attr("width") - margin.left - margin.right;
-const height = +svg.attr("height") - margin.top - margin.bottom;
-const grp = chart
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
   .append("g")
-  .attr("transform", `translate(-${margin.left},-${margin.top})`);
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
 
-// Add empty scales group for the scales to be attatched to on update 
-chart.append("g").attr("class", "x-axis");
-chart.append("g").attr("class", "y-axis");
+//Read the data
+d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered.csv", function(data) {
 
-// Add empty path
-const path = grp
-  .append("path")
-  .attr("transform", `translate(${margin.left},0)`)
-  .attr("fill", "none")
-  .attr("stroke", "steelblue")
-  .attr("stroke-linejoin", "round")
-  .attr("stroke-linecap", "round")
-  .attr("stroke-width", 1.5);
+  // group the data: I want to draw one line per group
+  var sumstat = d3.nest() // nest function allows to group the calculation per level of a factor
+    .key(function(d) { return d.name;})
+    .entries(data);
 
-function updateScales(data) {
-  // Create scales
-  const yScale = d3
-    .scaleLinear()
-    .range([height, 0])
-    .domain([0, d3.max(data, dataPoint => dataPoint.popularity)]);
-  const xScale = d3
-    .scaleLinear()
-    .range([0, width])
-    .domain(d3.extent(data, dataPoint => dataPoint.year));
-  return { yScale, xScale };
-}
+  // Add X axis --> it is a date format
+  var x = d3.scaleLinear()
+    .domain(d3.extent(data, function(d) { return d.year; }))
+    .range([ 0, width ]);
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x).ticks(5));
 
-function createLine(xScale, yScale) {
-  return line = d3
-  .line()
-  .x(dataPoint => xScale(dataPoint.year))
-  .y(dataPoint => yScale(dataPoint.popularity));
-}
+  // Add Y axis
+  var y = d3.scaleLinear()
+    .domain([0, d3.max(data, function(d) { return +d.n; })])
+    .range([ height, 0 ]);
+  svg.append("g")
+    .call(d3.axisLeft(y));
 
-function updateAxes(data, chart, xScale, yScale) {
-  chart
-    .select(".x-axis")
-    .attr("transform", `translate(0,${height})`)
-    .call(d3.axisBottom(xScale).ticks(data.length));
-  chart
-    .select(".y-axis")
-    .attr("transform", `translate(0, 0)`)
-    .call(d3.axisLeft(yScale));
-}
+  // color palette
+  var res = sumstat.map(function(d){ return d.key }) // list of group names
+  var color = d3.scaleOrdinal()
+    .domain(res)
+    .range(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999'])
 
-function updatePath(data, line) {
-  const updatedPath = d3
-    .select("path")
-    .interrupt()
-    .datum(data)
-    .attr("d", line);
+  // Draw the line
+  svg.selectAll(".line")
+      .data(sumstat)
+      .enter()
+      .append("path")
+        .attr("fill", "none")
+        .attr("stroke", function(d){ return color(d.key) })
+        .attr("stroke-width", 1.5)
+        .attr("d", function(d){
+          return d3.line()
+            .x(function(d) { return x(d.year); })
+            .y(function(d) { return y(+d.n); })
+            (d.values)
+        })
 
-  const pathLength = updatedPath.node().getTotalLength();
-  // D3 provides lots of transition options, have a play around here:
-  // https://github.com/d3/d3-transition
-  const transitionPath = d3
-    .transition()
-    .ease(d3.easeSin)
-    .duration(2500);
-  updatedPath
-    .attr("stroke-dashoffset", pathLength)
-    .attr("stroke-dasharray", pathLength)
-    .transition(transitionPath)
-    .attr("stroke-dashoffset", 0);
-}
-
-
-function updateChart(data) {
-    const { yScale, xScale } = updateScales(data);
-    const line = createLine(xScale, yScale);
-    updateAxes(data, chart, xScale, yScale);
-    updatePath(data, line);
-}
-
-updateChart(data);
-// Update chart when button is clicked
-d3.select("button").on("click", () => {
-  // Create new fake data
-  const newData = data.map(row => {
-    return { ...row, popularity: row.popularity * Math.random() };
-  });
-  updateChart(newData);
-});
+})
