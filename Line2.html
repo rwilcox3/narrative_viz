@@ -32,22 +32,6 @@ var y = d3.scaleLinear().range([height, 0]);
 var valueline = d3.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.close); })
-		  .on("mouseover", function(d,i) {
-		console.log(d);
-		console.log(i);
-		div.transition()		
-			.duration(200)		
-			.style("opacity", .9);		
-
-		div	.html("Tests: " + d.testTotal +  "<br>Hospital:" + d.hospital + "<br>Deaths:" + d.deaths)	
-			.style("left", (d3.event.pageX) + "px")		
-			.style("top", (d3.event.pageY - 84) + "px");	
-		})					
-	  .on("mouseout", function(d) {		
-		div.transition()		
-		.duration(500)		
-		.style("opacity", 0);	
-	});
 
 
 // define the 2nd line
@@ -85,6 +69,25 @@ d3.csv("data/data2.csv").then(function(data) {
       .data([data])
       .attr("class", "line")
       .attr("d", valueline)
+	  .on("mouseover", function(d,i) {
+		const {x,y} = bisect(d3.mouse(this)[0]);
+		console.log(x + " " + y);
+		console.log(d);
+		console.log(i);
+		div.transition()		
+			.duration(200)		
+			.style("opacity", .9);		
+
+		div	.html("Tests: " + d.testTotal +  "<br>Hospital:" + d.hospital + "<br>Deaths:" + d.deaths)	
+			.style("left", (d3.event.pageX) + "px")		
+			.style("top", (d3.event.pageY - 84) + "px");	
+		})					
+	  .on("mouseout", function(d) {		
+		div.transition()		
+		.duration(500)		
+		.style("opacity", 0);	
+	});
+
 
 
   // Add the valueline2 path.
