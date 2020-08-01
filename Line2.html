@@ -70,7 +70,7 @@ d3.csv("data/data2.csv").then(function(data) {
       .attr("class", "line")
       .attr("d", valueline)
 	  .on("mouseover", function(d,i) {
-		const {x,y} = bisect(d3.mouse(this)[0]);
+		const {x,y} = d3.bisect(d3.mouse(this)[0]);
 		console.log(x + " " + y);
 		console.log(d);
 		console.log(i);
