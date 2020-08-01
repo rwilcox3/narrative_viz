@@ -82,8 +82,8 @@ function readData(cb) {
 			cases.push({
 				name:data[i].state,
 				value: parseInt(data[i].positive),
-				deaths: data[i].deaths,
-				hospital: data[i].hospitalizedCumulative,
+				deaths: data[i].death,
+				hospital: data[i].hospitalizedCurrently,
 				testTotal: parseInt(data[i].positive) + parseInt(data[i].negative)
 			});
 			
