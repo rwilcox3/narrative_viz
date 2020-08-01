@@ -70,6 +70,7 @@ d3.csv("data/data2.csv").then(function(data) {
       .attr("d", valueline)
 	  .on("mouseover", function(d,i) {
 		console.log(d);
+		console.log(i);
 		div.transition()		
 			.duration(200)		
 			.style("opacity", .9);		
