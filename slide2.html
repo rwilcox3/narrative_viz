@@ -31,7 +31,7 @@ const svg = d3.select("div#container").append("svg")
           + adj + " -"
           + 5 + " "
           + (width + adj *3) + " "
-          + (height + adj))
+          + (height + margin))
     .style("padding", padding)
     .style("margin", margin)
     .classed("svg-content", true);
@@ -209,7 +209,7 @@ const svg2 = d3.select("div#container2").append("svg")
           + adj + " -"
           + 5 + " "
           + (width + adj *3) + " "
-          + (height + adj))
+          + (height + margin))
     .style("padding", padding)
     .style("margin", margin)
     .classed("svg-content", true);
