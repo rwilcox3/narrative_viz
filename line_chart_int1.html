@@ -89,16 +89,6 @@ svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(xaxis);
 
-svg.append("g")
-    .attr("class", "axis")
-    .call(yaxis)
-    .append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("dy", ".75em")
-    .attr("y", 6)
-    .style("text-anchor", "end")
-    .text("Frequency");
-
 //----------------------------LINES-----------------------------//
 const lines = svg.selectAll("lines")
     .data(slices)
