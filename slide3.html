@@ -45,18 +45,17 @@ dataset.then(function(data) {
 	console.log(data.columns[2,8]);
 //    var slices = data.columns.slice(1).map(function(id) {
 
-    var slices = data.columns.slice(1,3).map(function(id) {
-		if (id === 'IL' || id === 'CA') {
-			return {
-				id: id,
-				values: data.map(function(d){
-					return {
-						date: timeConv(d.date),
-						measurement: +d[id]
-					};
-				})
-			};
-		}
+	var col = {"CA","AR"};
+    var slices = col.map(function(id) {
+		return {
+			id: id,
+			values: data.map(function(d){
+				return {
+					date: timeConv(d.date),
+					measurement: +d[id]
+				};
+			})
+		};
     });
 	console.log(slices);
 
