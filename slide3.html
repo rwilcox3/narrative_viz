@@ -46,7 +46,7 @@ dataset.then(function(data) {
 //    var slices = data.columns.slice(1).map(function(id) {
 	var states = data.columns.slice(1);
 	const state1 =  d3.select("#states1")
-	for (let i = 0; i < states.length(); i++){
+	for (let i = 0; i < states.length; i++){
 		state1.append("option")
 		.attr("value",states[i])
 		.attr("text",states[i]);
