@@ -306,23 +306,25 @@ const tooltip = d3.select("body").append("div")
 
 //-------------------------2. DRAWING---------------------------//
 //-----------------------------AXES-----------------------------//
+/*
 svg.selectAll(".xaxis")
 //    .attr("class", "axis")
 	.transition().duration(1000)
     .attr("transform", "translate(0," + height + ")")
     .call(xaxis)
-
+*/
 svg.selectAll(".yaxis")
 //    .attr("class", "axis")
 	.transition().duration(1000)
    .call(yaxis)
+/*   
     .append("text")
     .attr("transform", "rotate(-90)")
     .attr("dy", ".75em")
     .attr("y", 6)
     .style("text-anchor", "end")
 //    .text("Frequency");
-
+*/
 //----------------------------TITLE-----------------------------//
 svg.append("text")
         .attr("x", (width / 2))             
