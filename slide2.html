@@ -307,8 +307,8 @@ d3.select("svg")
 //add line
 d3.select("svg")
  .append("line")
- .attr('x1', x_base + 2)
- .attr('y1', y_base + 7)
+ .attr('x1', x_base + 7)
+ .attr('y1', y_base + 20)
  .attr('x2', x_base + 28)
  .attr('y2', y_base + 28)
  .attr('stroke', 'MidnightBlue')
@@ -499,7 +499,7 @@ lines.selectAll("circles")
 //**********************
 x_base = 352
 y_base = 163
-d3.select("svg")
+svg2.
  .append("circle")
  .attr("cx",x_base)
  .attr("cy",y_base + 3)
@@ -509,7 +509,7 @@ d3.select("svg")
  .attr("fill","none");
 
 //add text
-d3.select("svg")
+svg2.
  .append("text")
  .attr("x", x_base + 30)
  .attr("y", y_base + 30)
@@ -523,7 +523,7 @@ d3.select("svg")
   ;
 
 //add line
-d3.select("svg")
+svg2.
  .append("line")
  .attr('x1', x_base + 2)
  .attr('y1', y_base + 7)
