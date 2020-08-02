@@ -114,7 +114,7 @@ svg.append("g")
 //----------------------------TITLE-----------------------------//
 svg.append("text")
         .attr("x", (width / 2))             
-        .attr("y", 0 + 100)
+        .attr("y", 0 + adj)
         .attr("text-anchor", "middle")  
         .style("font-size", "14px") 
         .style("text-decoration", "underline")  
@@ -200,6 +200,8 @@ lines.selectAll("circles")
 
 });
 
+//-----------------------------Second Graph-----------------------------//
+
 // Now for the Testing Data 
 const svg2 = d3.select("div#container2").append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
@@ -207,7 +209,7 @@ const svg2 = d3.select("div#container2").append("svg")
           + adj + " -"
           + 5 + " "
           + (width + adj *3) + " "
-          + (height + adj/2))
+          + (height + adj))
     .style("padding", padding)
     .style("margin", margin)
     .classed("svg-content", true);
@@ -290,7 +292,7 @@ svg2.append("g")
 //----------------------------Title-----------------------------//
 svg2.append("text")
         .attr("x", (width / 2))             
-        .attr("y", 0 - (margin.top / 2))
+        .attr("y", 0 + adj)
         .attr("text-anchor", "middle")  
         .style("font-size", "14px") 
         .style("text-decoration", "underline")  
