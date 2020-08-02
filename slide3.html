@@ -10,7 +10,7 @@
 	<div id="buttons">
 	<button onclick="document.location='slide2.html'">Prev</button>
 	<button onclick="document.location='slide3.html'">Update</button>
-	<div style="text-align:right;">Slide 2/3</div>
+	<div style="text-align:right;">Slide 3/3</div>
 
 <div id="container" class="svg-container"></div>
 <div id="container2" class="svg-container"></div>
@@ -39,7 +39,7 @@ const svg = d3.select("div#container").append("svg")
 //-----------------------------DATA-----------------------------//
 const timeConv = d3.timeParse("%d-%b-%Y");
 const timeFormat = d3.timeFormat("%m/%d/%y");
-const dataset = d3.csv("data/daily_ca_il_pos.csv");
+const dataset = d3.csv("data/daily_all_pos.csv");
 dataset.then(function(data) {
 	console.log(data);
 	console.log(data.columns[2,8]);
