@@ -52,7 +52,7 @@ dataset.then(function(data) {
 		  .text(function (d) { return d; }) // text showed in the menu
 		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
 	d3.select("#State1").node().value = "CA"
-	d3.select("#State1").on("change",updatechart);
+	d3.select("#State1").on("change",updateChart);
 		  
 	d3.select("#State2")
 		  .selectAll('myOptions')
@@ -63,7 +63,7 @@ dataset.then(function(data) {
 		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
 		  .attr("selected","IL")
 	d3.select("#State2").node().value = "IL"
-	d3.select("#State2").on("change",updatechart);
+	d3.select("#State2").on("change",updateChart);
 		  
 	var col = ["CA","IL"];
 //    var slices = data.columns.slice(1).map(function(id) {
