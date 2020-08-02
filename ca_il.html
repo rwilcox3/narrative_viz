@@ -197,10 +197,10 @@ const svg2 = d3.select("div#container2").append("svg")
     .classed("svg-content", true);
 
 //-----------------------------DATA-----------------------------//
-const timeConv = d3.timeParse("%d-%b-%Y");
-const timeFormat = d3.timeFormat("%m/%d/%y");
-const dataset = d3.csv("data/daily_ca_il_tst.csv");
-dataset.then(function(data) {
+//const timeConv = d3.timeParse("%d-%b-%Y");
+//const timeFormat = d3.timeFormat("%m/%d/%y");
+const dataset2 = d3.csv("data/daily_ca_il_tst.csv");
+dataset2.then(function(data) {
 	console.log(data);
     var slices = data.columns.slice(1).map(function(id) {
         return {
