@@ -119,7 +119,7 @@ lines.append("text")
             return "translate(" + (xScale(d.value.date) + 10)  
             + "," + (yScale(d.value.measurement) + 5 )+ ")"; })
     .attr("x", 5)
-    .text(function(d) { return (d.id; });
+    .text(function(d) { return d.id; });
 
 //---------------------------POINTS-----------------------------// 
 lines.selectAll("points")
