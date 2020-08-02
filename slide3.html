@@ -10,8 +10,8 @@
 	<div id="buttons">
 	<button onclick="document.location='slide2.html'">Prev</button>
 	<button onclick="updateChart()">Update</button>
-	<select id="State1"  align='center'></select>
-	<select id="State2" align='center'></select>
+	<select id="State1"  align='center' onchange="updatechart() ></select>
+	<select id="State2" align='center' onchange="updatechart()></select>
 	<div style="text-align:right;">Slide 3/3</div>
 
 <div id="container" class="svg-container"></div>
@@ -52,6 +52,7 @@ dataset.then(function(data) {
 			.append('option')
 		  .text(function (d) { return d; }) // text showed in the menu
 		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+		  .attr("selected","CA")
 	d3.select("#State2")
 		  .selectAll('myOptions')
 			.data(states)
@@ -59,6 +60,7 @@ dataset.then(function(data) {
 			.append('option')
 		  .text(function (d) { return d; }) // text showed in the menu
 		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+		  .attr("selected","IL")
 		  
 	var col = ["CA","IL"];
 //    var slices = data.columns.slice(1).map(function(id) {
