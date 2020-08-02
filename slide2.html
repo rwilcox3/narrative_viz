@@ -204,12 +204,12 @@ lines.selectAll("circles")
 //draw annotation 1
 //**********************
 var x_base = 325
-var y_base = 150
+var y_base = 180
 d3.select("svg")
  .append("circle")
  .attr("cx",x_base)
  .attr("cy",y_base + 3)
- .attr("r",25)
+ .attr("r",10)
  .attr("stroke",'MidnightBlue')
  .attr("stroke-dasharray","5")
  .attr("fill","none");
@@ -218,7 +218,7 @@ d3.select("svg")
 d3.select("svg")
  .append("text")
  .attr("x", x_base + 65)
- .attr("y", y_base + 3)
+ .attr("y", y_base - 20)
  .attr('stroke', 'black')
  .style("font-size", 12)
 // .style("font-family","Consolas")
@@ -233,7 +233,7 @@ d3.select("svg")
  .attr('x1', x_base + 25)
  .attr('y1', y_base + 3)
  .attr('x2', x_base + 60)
- .attr('y2', y_base + 3)
+ .attr('y2', y_base - 20)
  .attr('stroke', 'MidnightBlue')
 
 
