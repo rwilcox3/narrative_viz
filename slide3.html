@@ -46,7 +46,7 @@ dataset.then(function(data) {
 //    var slices = data.columns.slice(1).map(function(id) {
 
     var slices = data.columns.slice(1).map(function(id) {
-		if (id=='IL' or id=='CA') {
+		if (id === 'IL' || id === 'CA') {
 			return {
 				id: id,
 				values: data.map(function(d){
