@@ -203,7 +203,7 @@ lines.selectAll("circles")
 //**********************
 //Step up Testing Annotation
 //**********************
-var x_base = 327
+var x_base = 328
 var y_base = 166
 d3.select("svg")
  .append("circle")
@@ -263,7 +263,7 @@ d3.select("svg")
 // .style("font-family","Georgia")
 // .style("letter-spacing",2)
 // .style("font-weight","bold")
- .text("Illinois passes CA")
+ .text("California passes Illinois. Illinois spread rate reduces to under 1%")
   ;
 
 //add line
@@ -273,6 +273,44 @@ d3.select("svg")
  .attr('y1', y_base)
  .attr('x2', x_base + 28)
  .attr('y2', y_base - 28)
+ .attr('stroke', 'MidnightBlue')
+//**********************
+
+//**********************
+//CA Passes IL Annotation
+//**********************
+x_base = 550
+y_base = 110
+d3.select("svg")
+ .append("circle")
+ .attr("cx",x_base)
+ .attr("cy",y_base + 3)
+ .attr("r",10)
+ .attr("stroke",'MidnightBlue')
+ .attr("stroke-dasharray","5")
+ .attr("fill","none");
+
+//add text
+d3.select("svg")
+ .append("text")
+ .attr("x", x_base + 28)
+ .attr("y", y_base + 30)
+ .attr("text-anchor", "begin")
+// .attr("stroke", "black")
+ .style("font-size", "12px")
+// .style("font-family","Georgia")
+// .style("letter-spacing",2)
+// .style("font-weight","bold")
+ .text("Illinois passes California")
+  ;
+
+//add line
+d3.select("svg")
+ .append("line")
+ .attr('x1', x_base + 10)
+ .attr('y1', y_base)
+ .attr('x2', x_base + 28)
+ .attr('y2', y_base + 28)
  .attr('stroke', 'MidnightBlue')
 //**********************
 
