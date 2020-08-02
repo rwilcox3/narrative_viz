@@ -269,8 +269,16 @@ function updateChart() {
     });
 
 
+// -----------------  Remove old Dataa --------------------
 svg.selectAll("path").remove();
 svg.selectAll("lines").remove();
+svg.selectAll("g").remove();
+svg.selectAll("points").remove();
+svg.selectAll("circles").remove();
+
+// -----------------  Remove old Dataa --------------------
+
+
 const xScale = d3.scaleTime().range([0,width]);
 const yScale = d3.scaleLinear().rangeRound([height, 0]);
 xScale.domain(d3.extent(data, function(d){
