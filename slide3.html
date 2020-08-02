@@ -312,8 +312,14 @@ svg.selectAll(".axis")
 //    .attr("class", "axis")
 	.transition().duration(1000)
     .attr("transform", "translate(0," + height + ")")
-    .call(xaxis);
-
+    .call(xaxis)
+   .call(yaxis)
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("dy", ".75em")
+    .attr("y", 6)
+    .style("text-anchor", "end")
+/*
 svg.selectAll(".axis")
 //    .attr("class", "axis")
 	.transition().duration(1000)
@@ -324,7 +330,7 @@ svg.selectAll(".axis")
     .attr("y", 6)
     .style("text-anchor", "end")
 //    .text("Frequency");
-
+*/
 //----------------------------TITLE-----------------------------//
 svg.append("text")
         .attr("x", (width / 2))             
