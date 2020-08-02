@@ -30,7 +30,7 @@ const svg = d3.select("div#container").append("svg")
 
 //-----------------------------DATA-----------------------------//
 const timeConv = d3.timeParse("%d-%b-%Y");
-const timeFormat = d3.timeFormat("%B/%d/%Y");
+const timeFormat = d3.timeFormat("%m/%d/%y");
 const dataset = d3.csv("data/daily_ca_il_pos.csv");
 dataset.then(function(data) {
 	console.log(data);
