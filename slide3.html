@@ -10,8 +10,8 @@
 	<div id="buttons">
 	<button onclick="document.location='slide2.html'">Prev</button>
 	<button onclick="updateChart()">Update</button>
-	<select id="State1" align='center' onchange="updatechart()" ></select>
-	<select id="State2" align='center' onchange="updatechart()" ></select>
+	<select id="State1" align='center' onchange="updateChart()" ></select>
+	<select id="State2" align='center' onchange="updateChart()" ></select>
 	<div style="text-align:right;">Slide 3/3</div>
 
 <div id="container" class="svg-container"></div>
@@ -226,6 +226,7 @@ var timeout=setTimeout(2000);
  
 function updateChart() {
 	console.log("Button Clicked");
+	console.log("Selected " this.value);
 	var col = ["CA","IL"];
 	var coL2 = ["IL","NY"];
 	var col3 = ["FL","TX"];
