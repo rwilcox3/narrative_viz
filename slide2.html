@@ -308,7 +308,7 @@ d3.select("svg")
 d3.select("svg")
  .append("line")
  .attr('x1', x_base + 2)
- .attr('y1', y_base- 7)
+ .attr('y1', y_base + 7)
  .attr('x2', x_base + 28)
  .attr('y2', y_base + 28)
  .attr('stroke', 'MidnightBlue')
@@ -493,6 +493,44 @@ lines.selectAll("circles")
     });
 
 });
+
+//**********************
+//IL Improved testing Density
+//**********************
+x_base = 352
+y_base = 163
+d3.select("svg")
+ .append("circle")
+ .attr("cx",x_base)
+ .attr("cy",y_base + 3)
+ .attr("r",10)
+ .attr("stroke",'MidnightBlue')
+ .attr("stroke-dasharray","5")
+ .attr("fill","none");
+
+//add text
+d3.select("svg")
+ .append("text")
+ .attr("x", x_base + 30)
+ .attr("y", y_base + 30)
+ .attr("text-anchor", "end")
+// .attr("stroke", "black")
+ .style("font-size", "12px")
+// .style("font-family","Georgia")
+// .style("letter-spacing",2)
+// .style("font-weight","bold")
+ .text("Test density Gap widens")
+  ;
+
+//add line
+d3.select("svg")
+ .append("line")
+ .attr('x1', x_base + 2)
+ .attr('y1', y_base + 7)
+ .attr('x2', x_base + 28)
+ .attr('y2', y_base + 28)
+ .attr('stroke', 'MidnightBlue')
+//**********************
 
 
 </script>
