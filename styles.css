@@ -43,3 +43,18 @@ path.line-2 {
   font-family: Georgia;
   font-size: 80%;
 }
+
+/* LINE CHART */
+.line {
+fill: none;
+stroke: #d2d2d2;
+}
+
+.ghost-line {
+fill: none;
+stroke: #d2d2d2;
+opacity: 0;
+stroke-width: 10;
+}
+
+
