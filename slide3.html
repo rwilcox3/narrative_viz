@@ -10,10 +10,11 @@
 	<div id="buttons">
 	<button onclick="document.location='slide2.html'">Prev</button>
 	<button onclick="document.location='slide3.html'">Update</button>
+	<select id="State1" name="State1" default = "CA" align='center'>
+	<select id="State2" name="State2" default = "IL" align='center'>
 	<div style="text-align:right;">Slide 3/3</div>
 
 <div id="container" class="svg-container"></div>
-<div id="container2" class="svg-container"></div>
 <p>Both states were very much neck and neck at the outset.  The difference here is that Illinois increased it's per capita testing and though that initially caused Illinois to have more cases, just over a month later that reversed as California's cases began to increase significantly.
 </p>
 <script>
@@ -41,10 +42,15 @@ const timeConv = d3.timeParse("%d-%b-%Y");
 const timeFormat = d3.timeFormat("%m/%d/%y");
 const dataset = d3.csv("data/daily_all_pos.csv");
 dataset.then(function(data) {
-	console.log(data);
-	console.log(data.columns[2,8]);
 //    var slices = data.columns.slice(1).map(function(id) {
-	console.log(data.columns.slice(1));
+	var states = data.columns.slice(1));
+	const state1 =  d3.select("#states1)
+	for (let i = 0 i < states.length() i++)}
+	state1.append("option")
+		.attr("value",states[i])
+		.attr("text",states[i]);
+	}
+	.append
 	var col = ["CA","IL"];
 //    var slices = data.columns.slice(1).map(function(id) {
     var slices = col.map(function(id) {
