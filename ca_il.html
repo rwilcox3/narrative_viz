@@ -91,15 +91,15 @@ svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(xaxis);
 
-svg.append("g")
-    .attr("class", "axis")
-    .call(yaxis)
-    .append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("dy", ".75em")
-    .attr("y", 6)
-    .style("text-anchor", "end")
-    .text("Frequency");
+//svg.append("g")
+//   .attr("class", "axis")
+//    .call(yaxis)
+//    .append("text")
+//    .attr("transform", "rotate(-90)")
+//    .attr("dy", ".75em")
+//    .attr("y", 6)
+//    .style("text-anchor", "end")
+//    .text("Frequency");
 
 //----------------------------LINES-----------------------------//
 const lines = svg.selectAll("lines")
@@ -149,7 +149,7 @@ lines.selectAll("circles")
             .duration(200)
             .style("opacity", 1);
 
-        tooltip.html(d.measurement + "<br>" + d.date)
+        tooltip.html(d.measurement + "<br>" + timeConv(d.date))
             .style("left", (d3.event.pageX + 25) + "px")
             .style("top", (d3.event.pageY) + "px");
 
