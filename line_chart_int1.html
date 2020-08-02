@@ -58,11 +58,11 @@ yScale.domain([(0), d3.max(slices, function(c) {
 
 //-----------------------------AXES-----------------------------//
 const yaxis = d3.axisLeft()
-    .ticks(30)
+    .ticks((slices[0].values).length)
     .scale(yScale);
 
 const xaxis = d3.axisBottom()
-    .ticks(20)
+    .ticks(d3.timeDay.every(1))
     .tickFormat(d3.timeFormat('%b %d'))
     .scale(xScale);
 

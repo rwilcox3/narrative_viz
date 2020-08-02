@@ -32,12 +32,13 @@ const svg = d3.select("div#container").append("svg")
 const timeConv = d3.timeParse("%d-%b-%Y");
 const dataset = d3.csv("data/daily_ca_il_pos.csv");
 dataset.then(function(data) {
+	console.log(data);
     var slices = data.columns.slice(1).map(function(id) {
         return {
             id: id,
             values: data.map(function(d){
                 return {
-                    date: timeConv(Date(d.date)),
+                    date: timeConv(d.date),
                     measurement: +d[id]
                 };
             })
