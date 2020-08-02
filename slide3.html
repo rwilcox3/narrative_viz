@@ -10,8 +10,8 @@
 	<div id="buttons">
 	<button onclick="document.location='slide2.html'">Prev</button>
 	<button onclick="updateChart()">Update</button>
-	<select id="State1" name="State1" default = "CA" align='center'>
-	<select id="State2" name="State2" default = "IL" align='center'>
+	<select id="State1"  align='center'></select>
+	<select id="State2" align='center'></select>
 	<div style="text-align:right;">Slide 3/3</div>
 
 <div id="container" class="svg-container"></div>
@@ -45,7 +45,7 @@ const dataset = d3.csv("data/daily_all_pos.csv");
 dataset.then(function(data) {
 //    var slices = data.columns.slice(1).map(function(id) {
 	var states = data.columns.slice(1);
-	d3.select("#states1")
+	d3.select("#State1")
 		  .selectAll('myOptions')
 			.data(states)
 		  .enter()
