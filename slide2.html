@@ -200,6 +200,41 @@ lines.selectAll("circles")
 
 });
 
+//**********************
+//draw annotation 1
+//**********************
+d3.select("svg")
+ .append("circle")
+ .attr("cx",295)
+ .attr("cy",25)
+ .attr("r",25)
+ .attr("stroke","green")
+ .attr("stroke-dasharray","2")
+ .attr("fill","none");
+
+//add text
+d3.select("svg")
+ .append("text")
+ .attr("x", 360)
+ .attr("y", 25)
+ .attr('stroke', 'black')
+ .style("font-size", 16)
+ .style("font-family","Consolas")
+ .style("letter-spacing",2)
+ .style("font-weight",2)
+ .text("Illinois steps up testing");
+
+
+//add line
+d3.select("svg")
+ .append("line")
+ .attr('x1', 320)
+ .attr('y1', 22)
+ .attr('x2', 355)
+ .attr('y2', 22)
+ .attr('stroke', 'green')
+
+
 //-----------------------------Second Graph-----------------------------//
 
 // Now for the Testing Data 
