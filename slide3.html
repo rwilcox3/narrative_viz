@@ -335,7 +335,7 @@ var lines = svg.selectAll("lines")
     .enter()
     .append("g");
 
-lines.selectAll"path")
+lines.selectAll("path")
 //    .attr("class", ids)
 	.transition().duration(500)
     .attr("d", function(d) { return line(d.values); });
