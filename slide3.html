@@ -43,16 +43,20 @@ const dataset = d3.csv("data/daily_all_pos.csv");
 dataset.then(function(data) {
 	console.log(data);
 	console.log(data.columns[2,8]);
-    var slices = data.columns[2, 8].map(function(id) {
-        return {
-            id: id,
-            values: data.map(function(d){
-                return {
-                    date: timeConv(d.date),
-                    measurement: +d[id]
-                };
-            })
-        };
+//    var slices = data.columns.slice(1).map(function(id) {
+
+    var slices = data.columns.slice(1).map(function(id) {
+		if (id=='IL' or id=='CA') {
+			return {
+				id: id,
+				values: data.map(function(d){
+					return {
+						date: timeConv(d.date),
+						measurement: +d[id]
+					};
+				})
+			};
+		}
     });
 	console.log(slices);
 
