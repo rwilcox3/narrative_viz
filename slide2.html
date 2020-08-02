@@ -204,7 +204,7 @@ lines.selectAll("circles")
 //draw annotation 1
 //**********************
 var x_base = 325
-var y_base = 180
+var y_base = 170
 d3.select("svg")
  .append("circle")
  .attr("cx",x_base)
@@ -218,7 +218,7 @@ d3.select("svg")
 d3.select("svg")
  .append("text")
  .attr("x", x_base + 65)
- .attr("y", y_base - 20)
+ .attr("y", y_base - 30)
  .attr('stroke', 'black')
  .style("font-size", 12)
 // .style("font-family","Consolas")
@@ -230,10 +230,10 @@ d3.select("svg")
 //add line
 d3.select("svg")
  .append("line")
- .attr('x1', x_base + 25)
+ .attr('x1', x_base + 15)
  .attr('y1', y_base + 3)
  .attr('x2', x_base + 60)
- .attr('y2', y_base - 20)
+ .attr('y2', y_base - 30)
  .attr('stroke', 'MidnightBlue')
 
 
