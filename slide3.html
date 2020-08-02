@@ -299,11 +299,6 @@ const ids = function () {
 }  
 
 //---------------------------TOOLTIP----------------------------//
-/*const tooltip = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0)
-    .style("position", "absolute");
-*/
 //-------------------------2. DRAWING---------------------------//
 //-----------------------------AXES-----------------------------//
 /*
@@ -326,14 +321,14 @@ svg.selectAll(".yaxis")
 //    .text("Frequency");
 */
 //----------------------------TITLE-----------------------------//
-svg.append("text")
+/*svg.append("text")
         .attr("x", (width / 2))             
         .attr("y", 0 + margin + padding)
         .attr("text-anchor", "middle")  
         .style("font-size", "14px") 
         .style("text-decoration", "underline")  
         .text("Covid-19 Case Totals");
-
+*/
 //----------------------------LINES-----------------------------//
 var lines = svg.selectAll("lines")
     .data(slices)
