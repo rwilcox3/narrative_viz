@@ -52,7 +52,8 @@ dataset.then(function(data) {
 			.append('option')
 		  .text(function (d) { return d; }) // text showed in the menu
 		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
-		  .attr("selected","CA")
+	d3.select("#State1").node().value = "CA"
+		  
 	d3.select("#State2")
 		  .selectAll('myOptions')
 			.data(states)
@@ -61,6 +62,7 @@ dataset.then(function(data) {
 		  .text(function (d) { return d; }) // text showed in the menu
 		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
 		  .attr("selected","IL")
+	d3.select("#State2").node().value = "IL"
 		  
 	var col = ["CA","IL"];
 //    var slices = data.columns.slice(1).map(function(id) {
@@ -226,9 +228,11 @@ var timeout=setTimeout(2000);
  
 function updateChart() {
 	console.log("Button Clicked");
-	console.log("Selected " +  this.value);
-	var col = ["CA","IL"];
-	var coL2 = ["IL","NY"];
+	var sel1 = d3.select("#State1").node().value
+	var sel2 = d3.select("#State2").node().value
+	console.log("States are " + sel1 + " and " + sel2);
+	var coll = ["CA","IL"];
+	var col2 = ["IL","NY"];
 	var col3 = ["FL","TX"];
 	var selcol =[];
 	val = Math.floor(Math.random() * 2);
