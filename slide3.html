@@ -340,6 +340,16 @@ lines.selectAll("path")
 	.transition().duration(500)
     .attr("d", function(d) { return line(d.values); });
 
+lines.select("#line-0")
+    .attr("class", ids)
+	.transition().duration(500)
+    .attr("d", function(d) { return line(d.values); });
+
+lines.select("#line-1")
+    .attr("class", ids)
+	.transition().duration(500)
+    .attr("d", function(d) { return line(d.values); });
+
 
 lines.append("text")
     .attr("class","serie_label")
