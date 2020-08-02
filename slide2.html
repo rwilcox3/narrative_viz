@@ -205,9 +205,9 @@ const svg2 = d3.select("div#container2").append("svg")
     .attr("preserveAspectRatio", "xMinYMin meet")
     .attr("viewBox", "-"
           + adj + " -"
-          + 15 + " "
+          + 10 + " "
           + (width + adj *3) + " "
-          + (height))
+          + (height + adj/2))
     .style("padding", padding)
     .style("margin", margin)
     .classed("svg-content", true);
