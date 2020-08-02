@@ -30,6 +30,7 @@ const svg = d3.select("div#container").append("svg")
 
 //-----------------------------DATA-----------------------------//
 const timeConv = d3.timeParse("%d-%b-%Y");
+const timeFormat = d3.timeFormat("%B/%d/%Y");
 const dataset = d3.csv("data/daily_ca_il_pos.csv");
 dataset.then(function(data) {
 	console.log(data);
@@ -91,14 +92,14 @@ svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(xaxis);
 
-//svg.append("g")
-//   .attr("class", "axis")
-//    .call(yaxis)
-//    .append("text")
-//    .attr("transform", "rotate(-90)")
-//    .attr("dy", ".75em")
-//    .attr("y", 6)
-//    .style("text-anchor", "end")
+svg.append("g")
+   .attr("class", "axis")
+    .call(yaxis)
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("dy", ".75em")
+    .attr("y", 6)
+    .style("text-anchor", "end")
 //    .text("Frequency");
 
 //----------------------------LINES-----------------------------//
@@ -149,7 +150,7 @@ lines.selectAll("circles")
             .duration(200)
             .style("opacity", 1);
 
-        tooltip.html(d.measurement + "<br>" + timeConv(d.date))
+        tooltip.html(d.measurement + "<br>" + timeFormat(d.date))
             .style("left", (d3.event.pageX + 25) + "px")
             .style("top", (d3.event.pageY) + "px");
 
