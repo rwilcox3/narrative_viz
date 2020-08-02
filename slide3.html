@@ -270,12 +270,12 @@ function updateChart() {
     });
 
 
-    region  = sel1;
+/*
 	lines = svg.selectAll("lines")
     .data(slices)
     .enter()
     .append("g");
-
+*/
 /*	
     first=data[0][region];
     last=data[data.length - 1][region];
@@ -286,10 +286,18 @@ function updateChart() {
     // First transition the line & label to the new value.
     var trans1 = svg.transition().duration(750);
     
-    trans1.selectAll(".line")
-       .attr("d", line)
+    trans1.selectAll("lines")
+		.data(slices)
+       .enter()
+		.append("g");
+		
+		trans1.selectAll("lines").append("path")
+		.attr("class", ids)
+    .	attr("d", function(d) { return line(d.values); });
+
+
        //.style("stroke", function(d) { return c(d[region]); });
-       .style("stroke",c(region));
+//       .style("stroke",c(region));
 //    trans1.selectAll(".label").attr("transform", transform).text(region);
 /*
     // Then transition the y-axis.
