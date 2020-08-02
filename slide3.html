@@ -52,6 +52,7 @@ dataset.then(function(data) {
 			.append('option')
 		  .text(function (d) { return d; }) // text showed in the menu
 		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+		  
 	var col = ["CA","IL"];
 //    var slices = data.columns.slice(1).map(function(id) {
     var slices = col.map(function(id) {
@@ -266,10 +267,8 @@ function updateChart() {
   function transform(d) {
     return "translate(" + x(d.date) + "," + y(d[region]) + ")";
   }
-});
 		
 
-}
 
 </script>
 </body>
