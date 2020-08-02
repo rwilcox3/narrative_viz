@@ -227,12 +227,12 @@ lines.selectAll("circles")
 var timeout=setTimeout(2000);
  
 function updateChart() {
-	console.log("Button Clicked");
+//	console.log("Button Clicked");
 	var sel1 = d3.select("#State1").node().value
 	var sel2 = d3.select("#State2").node().value
-	console.log("States are " + sel1 + " and " + sel2);
+//	console.log("States are " + sel1 + " and " + sel2);
 	
-/
+
     var slices = [sel1,sel2].map(function(id) {
 		return {
 			id: id,
