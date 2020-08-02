@@ -9,7 +9,7 @@
 <body>
 	<div id="buttons">
 	<button onclick="document.location='slide2.html'">Prev</button>
-	<button onclick="document.location='slide3.html'">Update</button>
+	<button onclick="updateChart">Update</button>
 	<select id="State1" name="State1" default = "CA" align='center'>
 	<select id="State2" name="State2" default = "IL" align='center'>
 	<div style="text-align:right;">Slide 3/3</div>
@@ -46,8 +46,8 @@ dataset.then(function(data) {
 //    var slices = data.columns.slice(1).map(function(id) {
 	var states = data.columns.slice(1);
 	const state1 =  d3.select("#states1")
-	for (let i = 0 i < states.length() i++)}
-	state1.append("option")
+	for (let i = 0 i < states.length(); i++){
+		state1.append("option")
 		.attr("value",states[i])
 		.attr("text",states[i]);
 	}
@@ -212,6 +212,9 @@ lines.selectAll("circles")
 
 });
 
+function updateChart() {
+	console.log("Button Clicked");
+}
 
 </script>
 </body>
