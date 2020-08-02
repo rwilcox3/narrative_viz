@@ -62,7 +62,7 @@ yScale.domain([(0), d3.max(slices, function(c) {
 //-----------------------------AXES-----------------------------//
 const yaxis = d3.axisLeft()
     .ticks(10)
-	.tickFormat(d3.format(".0s"))
+	.tickFormat(d3.format(".3s"))
     .scale(yScale);
 
 const xaxis = d3.axisBottom()
