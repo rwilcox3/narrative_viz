@@ -255,8 +255,27 @@ function updateChart() {
 */
 
     clearTimeout(timeout);
+		var col = ["CA","IL"];
+//    var slices = data.columns.slice(1).map(function(id) {
+    var slices = [sel1,sel2].map(function(id) {
+		return {
+			id: id,
+			values: data.map(function(d){
+				return {
+					date: timeConv(d.date),
+					measurement: +d[id]
+				};
+			})
+		};
+    });
 
-    region  = selcol[0];
+
+    region  = sel1;
+	lines = svg.selectAll("lines")
+    .data(slices)
+    .enter()
+    .append("g");
+
 /*	
     first=data[0][region];
     last=data[data.length - 1][region];
@@ -265,7 +284,7 @@ function updateChart() {
 */
 
     // First transition the line & label to the new value.
-    var trans1 = svg.transition().duration(750);
+/*    var trans1 = svg.transition().duration(750);
     
     trans1.selectAll(".line")
        .attr("d", line)
@@ -284,7 +303,10 @@ function updateChart() {
   function transform(d) {
     return "translate(" + x(d.date) + "," + y(d[region]) + ")";
   }
-		
+	
+*/
+
+	
 });
 
 
