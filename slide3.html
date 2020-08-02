@@ -52,6 +52,13 @@ dataset.then(function(data) {
 			.append('option')
 		  .text(function (d) { return d; }) // text showed in the menu
 		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+	d3.select("#State2")
+		  .selectAll('myOptions')
+			.data(states)
+		  .enter()
+			.append('option')
+		  .text(function (d) { return d; }) // text showed in the menu
+		  .attr("value", function (d) { return d; }) // corresponding value returned by the button
 		  
 	var col = ["CA","IL"];
 //    var slices = data.columns.slice(1).map(function(id) {
