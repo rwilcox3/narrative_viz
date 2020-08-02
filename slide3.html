@@ -9,7 +9,6 @@
 <body>
 	<div id="buttons">
 	<button onclick="document.location='slide2.html'">Prev</button>
-	<button onclick="updateChart()">Update</button>
 	<select id="State1" align='center' onchange="updateChart()" ></select>
 	<select id="State2" align='center' onchange="updateChart()" ></select>
 	<div style="text-align:right;">Slide 3/3</div>
@@ -222,7 +221,6 @@ lines.selectAll("circles")
             .style("opacity", 0);
     });
 
-});
 
 var timeout=setTimeout(2000);
  
@@ -231,6 +229,8 @@ function updateChart() {
 	var sel1 = d3.select("#State1").node().value
 	var sel2 = d3.select("#State2").node().value
 	console.log("States are " + sel1 + " and " + sel2);
+	
+/*
 	var coll = ["CA","IL"];
 	var col2 = ["IL","NY"];
 	var col3 = ["FL","TX"];
@@ -250,6 +250,7 @@ function updateChart() {
 		break;
 	}
 	
+*/
 
     clearTimeout(timeout);
 
@@ -282,6 +283,7 @@ function updateChart() {
     return "translate(" + x(d.date) + "," + y(d[region]) + ")";
   }
 		
+});
 
 
 </script>
