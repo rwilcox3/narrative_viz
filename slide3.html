@@ -224,7 +224,6 @@ lines.selectAll("circles")
     });
 
 
-var timeout=setTimeout(2000);
  
 function updateChart() {
 //	console.log("Button Clicked");
@@ -267,6 +266,8 @@ svg.selectAll("circles").transition()           // apply a transition
 // -----------------  Remove old Dataa --------------------
 
 
+
+//----------------------------SCALES----------------------------//
 const xScale = d3.scaleTime().range([0,width]);
 const yScale = d3.scaleLinear().rangeRound([height, 0]);
 xScale.domain(d3.extent(data, function(d){
@@ -299,20 +300,24 @@ const ids = function () {
     return "line-"+id++;
 }  
 
+//---------------------------TOOLTIP----------------------------//
+const tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0)
+    .style("position", "absolute");
 
 //-------------------------2. DRAWING---------------------------//
 //-----------------------------AXES-----------------------------//
 svg.selectAll(".axis")
+//    .attr("class", "axis")
+	.transition().duration(1000)
     .attr("transform", "translate(0," + height + ")")
-	.transition()           // apply a transition
-    .duration(500)  
     .call(xaxis);
 
-
 svg.selectAll(".axis")
-	.transition()           // apply a transition
-    .duration(500)  
-    .call(yaxis)
+//    .attr("class", "axis")
+	.transition().duration(1000)
+   .call(yaxis)
     .append("text")
     .attr("transform", "rotate(-90)")
     .attr("dy", ".75em")
@@ -320,6 +325,14 @@ svg.selectAll(".axis")
     .style("text-anchor", "end")
 //    .text("Frequency");
 
+//----------------------------TITLE-----------------------------//
+svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 + margin + padding)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "14px") 
+        .style("text-decoration", "underline")  
+        .text("Covid-19 Case Totals");
 
 //----------------------------LINES-----------------------------//
 var lines = svg.selectAll("lines")
@@ -333,8 +346,6 @@ lines.append("path")
 
 lines.append("text")
     .attr("class","serie_label")
-	.transition()           // apply a transition
-    .duration(500)  
     .datum(function(d) {
         return {
             id: d.id,
@@ -350,8 +361,6 @@ lines.selectAll("points")
     .data(function(d) {return d.values})
     .enter()
     .append("circle")
-	.transition()           // apply a transition
-    .duration(500)  
     .attr("cx", function(d) { return xScale(d.date); })      
     .attr("cy", function(d) { return yScale(d.measurement); })    
     .attr("r", 1)
@@ -394,7 +403,6 @@ lines.selectAll("circles")
             .style("opacity", 0);  
 
         const selection = d3.select(this);
-
 
         selection
             .transition()
