@@ -37,7 +37,7 @@ dataset.then(function(data) {
             id: id,
             values: data.map(function(d){
                 return {
-                    date: timeConv(d.date),
+                    date: timeConv(Date(d.date)),
                     measurement: +d[id]
                 };
             })
