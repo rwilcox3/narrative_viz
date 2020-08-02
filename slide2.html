@@ -7,6 +7,11 @@
 <style></style>
 </head>
 <body>
+	<div id="buttons">
+	<button onclick="document.location='index.html'">Prev</button>
+	<button onclick="document.location='slide3.html'">Next</button>
+	<div style="text-align:right;">Slide 2/3</div>
+
 <div id="container" class="svg-container"></div>
 <div id="container2" class="svg-container"></div>
 <script>
@@ -24,7 +29,7 @@ const svg = d3.select("div#container").append("svg")
           + adj + " -"
           + adj + " "
           + (width + adj *3) + " "
-          + (height + adj*3))
+          + (height))
     .style("padding", padding)
     .style("margin", margin)
     .classed("svg-content", true);
