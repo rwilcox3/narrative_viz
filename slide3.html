@@ -146,7 +146,7 @@ svg.append("text")
         .text("Covid-19 Case Totals");
 
 //----------------------------LINES-----------------------------//
-const lines = svg.selectAll("lines")
+var lines = svg.selectAll("lines")
     .data(slices)
     .enter()
     .append("g");
@@ -284,14 +284,14 @@ function updateChart() {
 */
 
     // First transition the line & label to the new value.
-/*    var trans1 = svg.transition().duration(750);
+    var trans1 = svg.transition().duration(750);
     
     trans1.selectAll(".line")
        .attr("d", line)
        //.style("stroke", function(d) { return c(d[region]); });
        .style("stroke",c(region));
-    trans1.selectAll(".label").attr("transform", transform).text(region);
-
+//    trans1.selectAll(".label").attr("transform", transform).text(region);
+/*
     // Then transition the y-axis.
     y.domain(d3.extent(data, function(d) { return d[region]; }));
     var trans2 = trans1.transition();
