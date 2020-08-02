@@ -203,8 +203,8 @@ lines.selectAll("circles")
 //**********************
 //draw annotation 1
 //**********************
-var x_base = 330
-var y_base = 165
+var x_base = 328
+var y_base = 162
 d3.select("svg")
  .append("circle")
  .attr("cx",x_base)
@@ -231,8 +231,8 @@ d3.select("svg")
 //add line
 d3.select("svg")
  .append("line")
- .attr('x1', x_base + 10)
- .attr('y1', y_base + 3)
+ .attr('x1', x_base - 10)
+ .attr('y1', y_base)
  .attr('x2', x_base - 30)
  .attr('y2', y_base - 30)
  .attr('stroke', 'MidnightBlue')
