@@ -269,18 +269,12 @@ function updateChart() {
     });
 
 
-/*
-	lines = svg.selectAll("lines")
-    .data(slices)
-    .enter()
-    .append("g");
-*/
-/*	
-    first=data[0][region];
-    last=data[data.length - 1][region];
-    d3.select("#tre")
-    .text(region+" 1961-2014: "+ d3.round(100*(last-first)/first,2)+"%");
-*/
+svg.selectAll("path").remove();
+svg.selectAll("lines").remove();
+const xScale = d3.scaleTime().range([0,width]);
+const yScale = d3.scaleLinear().rangeRound([height, 0]);
+xScale.domain(d3.extent(data, function(d){
+    return timeConv(d.date)}));
 
 yScale.domain([(0), d3.max(slices, function(c) {
     return d3.max(c.values, function(d) {
@@ -289,16 +283,33 @@ yScale.domain([(0), d3.max(slices, function(c) {
     ]);
 
 //-----------------------------AXES-----------------------------//
- yaxis = d3.axisLeft()
+var yaxis = d3.axisLeft()
     .ticks(10)
 	.tickFormat(d3.format(".2s"))
     .scale(yScale);
 
+const xaxis = d3.axisBottom()
+    .ticks(20)
+    .tickFormat(d3.timeFormat('%b %d'))
+    .scale(xScale);
 
 //----------------------------LINES-----------------------------//
+const line = d3.line()
+    .x(function(d) { return xScale(d.date); })
+    .y(function(d) { return yScale(d.measurement); });
+
+let id = 0;
+const ids = function () {
+    return "line-"+id++;
+}  
+
 
 //-------------------------2. DRAWING---------------------------//
 //-----------------------------AXES-----------------------------//
+svg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xaxis);
 
 svg.append("g")
    .attr("class", "axis")
@@ -309,6 +320,15 @@ svg.append("g")
     .attr("y", 6)
     .style("text-anchor", "end")
 //    .text("Frequency");
+
+//----------------------------TITLE-----------------------------//
+svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 + margin + padding)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "14px") 
+        .style("text-decoration", "underline")  
+        .text("Covid-19 Case Totals");
 
 //----------------------------LINES-----------------------------//
 var lines = svg.selectAll("lines")
@@ -344,7 +364,6 @@ lines.selectAll("points")
     .style("opacity", 1);
 
 //---------------------------EVENTS-----------------------------//    
-
 lines.selectAll("circles")
     .data(function(d) { return(d.values); } )
     .enter()
@@ -388,6 +407,7 @@ lines.selectAll("circles")
             .attr("r", 10)
             .style("opacity", 0);
     });
+
 
 
 
