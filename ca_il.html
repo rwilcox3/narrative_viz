@@ -104,6 +104,15 @@ svg.append("g")
     .style("text-anchor", "end")
 //    .text("Frequency");
 
+//Title //
+svg.append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("font-size", "16px") 
+        .style("text-decoration", "underline")  
+        .text("Covid-19 Case Totals");
+
 //----------------------------LINES-----------------------------//
 const lines = svg.selectAll("lines")
     .data(slices)
