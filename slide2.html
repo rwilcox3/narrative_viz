@@ -20,7 +20,7 @@
 //------------------------1. PREPARATION------------------------//
 //-----------------------------SVG------------------------------//
 const width = 960;
-const height = 190;
+const height = 195;
 const margin = 10;
 const padding = 5;
 const adj = 35;
@@ -209,7 +209,7 @@ const svg2 = d3.select("div#container2").append("svg")
           + adj + " -"
           + 5 + " "
           + (width + adj *3) + " "
-          + (height + margin))
+          + (height + adj))
     .style("padding", padding)
     .style("margin", margin)
     .classed("svg-content", true);
