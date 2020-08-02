@@ -120,12 +120,12 @@ const tooltip = d3.select("body").append("div")
 //-------------------------2. DRAWING---------------------------//
 //-----------------------------AXES-----------------------------//
 svg.append("g")
-    .attr("class", "axis")
+    .attr("class", "xaxis")
     .attr("transform", "translate(0," + height + ")")
     .call(xaxis);
 
 svg.append("g")
-   .attr("class", "axis")
+   .attr("class", "yaxis")
     .call(yaxis)
     .append("text")
     .attr("transform", "rotate(-90)")
@@ -306,19 +306,13 @@ const tooltip = d3.select("body").append("div")
 
 //-------------------------2. DRAWING---------------------------//
 //-----------------------------AXES-----------------------------//
-svg.selectAll(".axis")
+svg.selectAll(".xaxis")
 //    .attr("class", "axis")
 	.transition().duration(1000)
     .attr("transform", "translate(0," + height + ")")
     .call(xaxis)
-   .call(yaxis)
-    .append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("dy", ".75em")
-    .attr("y", 6)
-    .style("text-anchor", "end")
-/*
-svg.selectAll(".axis")
+
+svg.selectAll(".yaxis")
 //    .attr("class", "axis")
 	.transition().duration(1000)
    .call(yaxis)
