@@ -312,10 +312,9 @@ svg.append("g")
 svg.append("g")
    .attr("class", "axis")
     .call(yaxis)
+    .append("text")
 	.transition()           // apply a transition
     .duration(500)  
-	
-    .append("text")
     .attr("transform", "rotate(-90)")
     .attr("dy", ".75em")
     .attr("y", 6)
@@ -330,9 +329,6 @@ var lines = svg.selectAll("lines")
     .append("g");
 
 lines.append("path")
-.transition()           // apply a transition
-    .duration(500)  
-	
     .attr("class", ids)
     .attr("d", function(d) { return line(d.values); });
 
@@ -340,7 +336,6 @@ lines.append("text")
     .attr("class","serie_label")
 	.transition()           // apply a transition
     .duration(500)  
-	
     .datum(function(d) {
         return {
             id: d.id,
@@ -355,10 +350,9 @@ lines.append("text")
 lines.selectAll("points")
     .data(function(d) {return d.values})
     .enter()
+    .append("circle")
 	.transition()           // apply a transition
     .duration(500)  
-	
-    .append("circle")
     .attr("cx", function(d) { return xScale(d.date); })      
     .attr("cy", function(d) { return yScale(d.measurement); })    
     .attr("r", 1)
@@ -412,26 +406,8 @@ lines.selectAll("circles")
     });
 
 
-
-
-
-
-       //.style("stroke", function(d) { return c(d[region]); });
-//       .style("stroke",c(region));
-//    trans1.selectAll(".label").attr("transform", transform).text(region);
-/*
-    // Then transition the y-axis.
-    y.domain(d3.extent(data, function(d) { return d[region]; }));
-    var trans2 = trans1.transition();
-    trans2.selectAll(".line").attr("d", line);
-    trans2.selectAll(".label").attr("transform", transform);
-    trans2.selectAll(".y.axis").call(yAxis);
-	*/
   }
 
-  function transform(d) {
-    return "translate(" + x(d.date) + "," + y(d[region]) + ")";
-  }
 	
 
 
