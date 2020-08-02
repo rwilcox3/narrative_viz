@@ -298,13 +298,14 @@ function updateChart() {
     trans2.selectAll(".line").attr("d", line);
     trans2.selectAll(".label").attr("transform", transform);
     trans2.selectAll(".y.axis").call(yAxis);
+	*/
   }
 
   function transform(d) {
     return "translate(" + x(d.date) + "," + y(d[region]) + ")";
   }
 	
-*/
+
 
 	
 });
