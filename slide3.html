@@ -232,30 +232,7 @@ function updateChart() {
 	var sel2 = d3.select("#State2").node().value
 	console.log("States are " + sel1 + " and " + sel2);
 	
-/*
-	var coll = ["CA","IL"];
-	var col2 = ["IL","NY"];
-	var col3 = ["FL","TX"];
-	var selcol =[];
-	val = Math.floor(Math.random() * 2);
-	
-	switch (val) {
-	case 0:
-	default:
-		selcol=col1;
-		break;
-	case 1:
-		selcol=col2;
-		break;
-	case 2: 
-		selcol=col3;
-		break;
-	}
-	
-*/
-
-	var col = ["CA","IL"];
-//    var slices = data.columns.slice(1).map(function(id) {
+/
     var slices = [sel1,sel2].map(function(id) {
 		return {
 			id: id,
@@ -270,11 +247,21 @@ function updateChart() {
 
 
 // -----------------  Remove old Dataa --------------------
-svg.selectAll("path").remove();
-svg.selectAll("lines").remove();
-svg.selectAll("g").remove();
-svg.selectAll("points").remove();
-svg.selectAll("circles").remove();
+svg.selectAll("path").transition()           // apply a transition
+    .duration(500)  
+	.remove();
+svg.selectAll("lines").transition()           // apply a transition
+    .duration(500)  
+	.remove();
+svg.selectAll("g").transition()           // apply a transition
+    .duration(500)  
+	.remove();
+svg.selectAll("points").transition()           // apply a transition
+    .duration(500)  
+	.remove();
+svg.selectAll("circles").transition()           // apply a transition
+    .duration(500)  
+	.remove();
 
 // -----------------  Remove old Dataa --------------------
 
@@ -317,11 +304,17 @@ const ids = function () {
 svg.append("g")
     .attr("class", "axis")
     .attr("transform", "translate(0," + height + ")")
+	.transition()           // apply a transition
+    .duration(500)  
+	
     .call(xaxis);
 
 svg.append("g")
    .attr("class", "axis")
     .call(yaxis)
+	.transition()           // apply a transition
+    .duration(500)  
+	
     .append("text")
     .attr("transform", "rotate(-90)")
     .attr("dy", ".75em")
@@ -329,14 +322,6 @@ svg.append("g")
     .style("text-anchor", "end")
 //    .text("Frequency");
 
-//----------------------------TITLE-----------------------------//
-svg.append("text")
-        .attr("x", (width / 2))             
-        .attr("y", 0 + margin + padding)
-        .attr("text-anchor", "middle")  
-        .style("font-size", "14px") 
-        .style("text-decoration", "underline")  
-        .text("Covid-19 Case Totals");
 
 //----------------------------LINES-----------------------------//
 var lines = svg.selectAll("lines")
@@ -345,11 +330,17 @@ var lines = svg.selectAll("lines")
     .append("g");
 
 lines.append("path")
+.transition()           // apply a transition
+    .duration(500)  
+	
     .attr("class", ids)
     .attr("d", function(d) { return line(d.values); });
 
 lines.append("text")
     .attr("class","serie_label")
+	.transition()           // apply a transition
+    .duration(500)  
+	
     .datum(function(d) {
         return {
             id: d.id,
@@ -364,6 +355,9 @@ lines.append("text")
 lines.selectAll("points")
     .data(function(d) {return d.values})
     .enter()
+	.transition()           // apply a transition
+    .duration(500)  
+	
     .append("circle")
     .attr("cx", function(d) { return xScale(d.date); })      
     .attr("cy", function(d) { return yScale(d.measurement); })    
