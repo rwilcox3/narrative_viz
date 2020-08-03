@@ -334,6 +334,12 @@ var lines = svg.selectAll("lines")
     .data(slices)
     .enter()
     .append("g");
+	
+/*
+	lines.append("path")
+    .attr("class", ids)
+    .attr("d", function(d) { return line(d.values); });
+*/
 
 lines.selectAll("path")
 //    .attr("class", ids)
@@ -347,6 +353,14 @@ lines.select("#line-0")
 
 lines.select("#line-1")
     .attr("class", ids)
+	.transition().duration(500)
+    .attr("d", function(d) { return line(d.values); });
+
+lines.selectAll(.line-0")
+	.transition().duration(500)
+    .attr("d", function(d) { return line(d.values); });
+
+lines.selectaLL(".line-1")
 	.transition().duration(500)
     .attr("d", function(d) { return line(d.values); });
 
