@@ -245,23 +245,13 @@ function updateChart() {
 
 // -----------------  Remove old Dataa --------------------
 
-svg.selectAll("path").transition()           // apply a transition
-    .duration(500)  
-	.remove();
-svg.selectAll("lines").transition()           // apply a transition
-    .duration(500)  
-	.remove();
-/*
-svg.selectAll("g").transition()           // apply a transition
-    .duration(500)  
-	.remove();
-*/
-svg.selectAll("points").transition()           // apply a transition
-    .duration(500)  
-	.remove();
-svg.selectAll("circles").transition()           // apply a transition
-    .duration(500)  
-	.remove();
+svg.selectAll("path").	.remove();
+svg.selectAll("lines").remove();
+
+svg.selectAll("g").remove();
+
+svg.selectAll("points").remove();
+svg.selectAll("circles").remove();
 
 // -----------------  Remove old Dataa --------------------
 
