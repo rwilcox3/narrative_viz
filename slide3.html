@@ -244,16 +244,18 @@ function updateChart() {
 
 
 // -----------------  Remove old Dataa --------------------
-/*
+
 svg.selectAll("path").transition()           // apply a transition
     .duration(500)  
 	.remove();
 svg.selectAll("lines").transition()           // apply a transition
     .duration(500)  
 	.remove();
+/*
 svg.selectAll("g").transition()           // apply a transition
     .duration(500)  
 	.remove();
+*/
 svg.selectAll("points").transition()           // apply a transition
     .duration(500)  
 	.remove();
@@ -335,14 +337,14 @@ var lines = svg.selectAll("lines")
     .enter()
     .append("g");
 	
-/*
+
 	lines.append("path")
     .attr("class", ids)
     .attr("d", function(d) { return line(d.values); });
-*/
 
+/*
 lines.selectAll("path")
-//    .attr("class", ids)
+    .attr("class", ids)
 	.transition().duration(500)
     .attr("d", function(d) { return line(d.values); });
 
@@ -363,6 +365,7 @@ lines.selectAll(".line-0")
 lines.selectAll(".line-1")
 	.transition().duration(500)
     .attr("d", function(d) { return line(d.values); });
+*/
 
 
 lines.append("text")
