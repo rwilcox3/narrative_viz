@@ -98,13 +98,12 @@ function BarChartRace(chartId, extendedSettings) {
       .attr("class", "column-rect")
       .attr("width", 0)
       .attr("height", yAxisScale.step() * (1 - chartSettings.columnPadding))
-	  .on("mouseover", function(d) {
-		console.log("MouseOver D=" + d);
+	  .on("mouseover", function(d) {		
 		div.transition()		
 			.duration(200)		
 			.style("opacity", .9);		
 
-		div	.html("Tests: " + d.test +  "<br>Positives:" + d.open + "<br>Deaths:" + d.close)	
+		div	.html("Tests: " + d.testTotal +  "<br>Hospital:" + d.hospital + "<br>Deaths:" + d.deaths)	
 			.style("left", (d3.event.pageX) + "px")		
 			.style("top", (d3.event.pageY - 84) + "px");	
 		})					
